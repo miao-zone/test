@@ -17,15 +17,42 @@
 	  box-sizing: border-box;
 	}
 	
+	body {
+		
+		background-color : rgba(231,76,60,0.8);
+		
+	
+		animation:mycolor 30s infinite;
+	 }
+	
+	@keyframes mycolor{
+		0%{rgba(231,76,60,0.8);}
+		20%{background-color:#f1c40f;}
+		40%{background-color:#1fe3bc;}
+		60%{background-color:#3498db;}
+		80%{background-color:#9b59b6;}
+		100%{rgba(231,76,60,0.8);}
+	}
 	
 	
-	
+	.video-bg {
+	  position: fixed;
+	  right: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	}
+	.video-bg video {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	}
 	
 	
 	
 	.slide-container {
 	  margin: auto;
-	  width: 380px;
+	  width: 100%;
 	  height: 100%;
 	  text-align: center;
 	  position: fixed;
@@ -382,7 +409,7 @@
 		width: 50px;
 		height: 50px;
 	}
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 600px) {
 	    .slide-container {display: unset;}
 		.big_box {display: none;}
 		
@@ -412,10 +439,12 @@
 		
 		position: fixed;
 		top: 20%;
+		margin-left: 0.625rem;
 	}
 	.box_ity {
 		position: fixed;
 		top: 10%;
+		margin-left: 1.625rem;
 		
 	}
 	
@@ -423,7 +452,12 @@
 </head>
 <body>
 	<div class="big_box">
-		
+	<div class="video-bg">
+	 <video width="320" height="240" autoplay loop muted>
+	  <source src="img/7btrrd.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+	</video>
+	</div>	
 		 
 		
 	</div>
