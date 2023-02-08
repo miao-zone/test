@@ -738,13 +738,13 @@
 	<button class="btn play-pause">
 		<div class="icon-container">
 			<svg class="icon play">
-				<use xlink:href="#pause"></use>
+				<use xlink:href="#play"></use>
 			</svg>
 		</div>
 		<div class="icon-container">
 			
 			<svg class="icon pause">
-				<use xlink:href="#play"></use>
+				<use xlink:href="#pause"></use>
 			</svg>
 		</div>
 	</button>
@@ -793,7 +793,7 @@
 	
 	
 </div>
-<audio  id="fm_player"  autoplay name="media"><source src="https://ns3.mycloud-apps.es:9012/live"></audio>
+<audio  id="fm_player" autoplay  name="media"><source src="https://ns3.mycloud-apps.es:9012/live"></audio>
 
 
 
@@ -822,9 +822,9 @@
 	
 	buttons.forEach(btn => {
 		btn.addEventListener("click", () => {
-			btn.classList.toggle("active");
+			//btn.classList.toggle("active");
 			
-			if(fm_player.paused){fm_player.play();}else{fm_player.pause();}
+			if(fm_player.paused){fm_player.play();btn.classList.add("active")}else{fm_player.pause();btn.classList.remove("active")}
 			
 			
 			
@@ -833,13 +833,27 @@
 	});
 btn1.addEventListener("click", () => {
 									
-			fm_player.volume+=0.1
 			
+			if(fm_player.volume>=1){
+			btn1.style.opacity= 0.5;				
+			}
+			else{fm_player.volume+=0.1
+			if(fm_player.volume>=0.1){btn2.style.opacity= 1}
+			}
 		});
 	
 btn2.addEventListener("click", () => {
 									
-			fm_player.volume-=0.1
+			
+			
+			if(fm_player.volume<=0.01){
+				
+				btn2.style.opacity= 0.5;
+			}else{
+				fm_player.volume-=0.1
+				if(fm_player.volume>=0.9){btn1.style.opacity= 1}
+				
+			}
 			
 		});	
 		
