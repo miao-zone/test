@@ -793,7 +793,7 @@
 	
 	
 </div>
-<audio  id="fm_player" autoplay  name="media"><source src="https://ns3.mycloud-apps.es:9012/live"></audio>
+<audio id="fm_player" autoplay loop name="media"><source src="https://ns3.mycloud-apps.es:9012/live"></audio>
 
 
 
@@ -857,9 +857,17 @@ btn2.addEventListener("click", () => {
 			
 		});	
 		
+fm_player.addEventListener("play",() =>{	
+	buttons.forEach(btn => {
+		btn.classList.add("active")		
+	});	
+})		
+		
+	window.onload=function () {
+	
 		
 		
-		
+	}	
 		
 </script>
 <script>
