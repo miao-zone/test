@@ -17,6 +17,16 @@
 	*, *:before, *:after {
 	  box-sizing: border-box;
 	}
+	:root {
+	  --primary-light: #8abdff;
+	  --primary: #6d5dfc;
+	  --primary-dark: #5b0eeb;
+	  --white: #ffffff;
+	  --greyLight-1: #abb4ff;
+	  --greyLight-2: #c297bf;
+	  --greyLight-3: #d5e1ff;
+	  --greyDark: #9baacf;
+	}
 	
 	body {
 		
@@ -445,6 +455,19 @@
 		top:110px;
 		left:50px;		
 	}
+	.torino{
+		position: absolute;
+		top:50px;
+		left:0px;		
+		
+	}
+	
+	.genova{
+		position: absolute;
+		top:100px;
+		left:0px;	
+		
+	}
 	.shadow {
 	
 	filter:drop-shadow(-15px 15px 10px rgba(26,58,70,0.7));
@@ -611,14 +634,14 @@
 		width: fit-content;
 		text-align:right;
 		
-		padding: 1px;
+		padding: 3px;
 		padding-left: 3px;
 		padding-right: 3px;
 	
 	margin: 3px 5px 3px 25px;
 	display:block;
 	  line-height:13px;
-	  font-size: 11px;
+	  font-size: 13px;
 	  font-weight: 600;
 	  font-family:"微软雅黑", Arial, Helvetica, sans-serif;
 	  background-color: rgba(15, 35, 42, 0.7);
@@ -659,14 +682,64 @@
 		80%{background-color:#9b59b6;}
 		100%{background-color:rgba(231,76,60,0.8);}
 	}
-	.my_xing {
-	    
+	
+	@keyframes waves {
+	  0% {
+	    transform: scale(1);
+	    opacity: 0.4;
+	  }
+	  50% {
+	    opacity: 0.4;
+	  }
+	  100% {
+	    transform: scale(1.5);
+	    opacity: 0;
+	  }
+	}
+	.circle__back-1, .circle__back-2 {
+	  grid-row: 1/2;
+	  grid-column: 1/2;
+	  width: 5rem;
+	  height: 5rem;
+	  border-radius: 50%;
+	  filter: blur(1px);
+	  opacity: 0;
+	  
+	}
+	.circle__back-1 {
+	  box-shadow: 3px 3px 5px var(--greyLight-2), -0.2rem -0.2rem 0.4rem var(--white);
+	  background: linear-gradient(to bottom right, var(--greyLight-2) 0%, var(--white) 100%);
+	  animation: waves 4s linear infinite;
+	}
+	.circle__back-1.paused {
+	  animation-play-state: paused;
+	}
+	.circle__back-2 {
+	  box-shadow: 0.3rem 0.3rem 0.5rem var(--greyLight-2), -0.2rem -0.2rem 0.4rem var(--white);
+	  animation: waves 4s linear 2s infinite;
+	}
+	.circle__back-2.paused {
+	  animation-play-state: paused;
 	}
 	
-	
-	
-	
-	
+	.circle {
+	  grid-column: 2/3;
+	  grid-row: 4/6;
+	  width: 9rem;
+	  height: 100%;
+	  justify-self: center;
+	  border-radius: 1rem;
+	  display: grid;
+	  grid-template-rows: 1fr;
+	  position: absolute;
+	  left: 1px;
+	  top: 1px;
+	  z-index: -111;
+	  }
+	  
+	.circle-shadow {
+	  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--primary);
+	}
 		</style>	
 </head>
 <body>
@@ -788,43 +861,7 @@
     <div class="clash-card archer">
       <div class="clash-card__image clash-card__image--archer">
 		  
-		<div class='content'>
-			
 		
-		<div class="dpx">
-		
-		<div class='py'>
-		  <label>
-		   
-		    MILANO HINTERLAND FM 89.8
-		  </label>
-		  
-		 
-		  <label>
-		  
-		    VARESE FM 89.7
-		  </label>
-		  <label>
-		 
-		    PAVIA FM 89.6
-		  </label>
-		  <label>
-		
-		    NOVARA FM 89.7
-		  </label>
-		  <label>
-		
-		    TORTONA FM 89.8
-		  </label>
-		
-		
-		
-		
-		
-		
-		</div>
-		</div>
-		</div>  
 		  
 		  
       <div class="box_ity">
@@ -832,51 +869,12 @@
         <svg class="map_ity" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 531 719"><defs><style>.cls-1,.cls-2,.cls-3{fill-rule:evenodd;}.cls-1{fill:url(#未命名的渐变_97);}.cls-2{fill:url(#未命名的渐变_97-2);}.cls-3{fill:url(#未命名的渐变_97-3);}</style><linearGradient id="未命名的渐变_97" x1="265.5" y1="637" x2="265.5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#aecb7c" stop-opacity="1"/><stop offset="0.28" stop-color="#a5c96f" stop-opacity="1"/><stop offset="0.69" stop-color="#8bc24d" stop-opacity="1"/><stop offset="1" stop-color="#72bb2b"/></linearGradient><linearGradient id="未命名的渐变_97-2" x1="104.38" y1="529" x2="104.38" y2="356" xlink:href="#未命名的渐变_97"/><linearGradient id="未命名的渐变_97-3" x1="315.5" y1="719" x2="315.5" y2="610" xlink:href="#未命名的渐变_97"/></defs><g id="图层_2" data-name="图层 2"><g id="图层_1-2" data-name="图层 1"><path class="cls-1" d="M233,0c7.1.35,13.3,3.18,16,8,1.95,6.3-1.67,11,4,15,14.69,9.66,40.31,10.34,51,24-1.71,9-5.53,12.19-6,23l21,21-2,12-2,1c-12.17-.47-25.41-5.88-36-1l-6,9c-9.27-1.18-12-2.12-18,2l-6,18a32,32,0,0,0,11,8c1.13,13.17-7.36,17.72-10,28-2.47,9.63,4.78,19.64,7,26l2,10,49,34,10,64,62,56c13.24-.29,31.07-4.56,41,0,2.8,13.58-6.18,21-1,31l29,15c5,2.48,17.58.53,23,4l59,59-2,33c-1.64,3.29-2,3.19-5,5l-12-5-8-26c-6.06-1.72-11.29,2.26-18,0s-6.39-8.75-16-10l-5,4-17,29c8.15,16.51,43.07,36.39,24,71-6.82,1.14-16.88,4.83-20,10l-1,20-27,39c-8.44-.09-14.32-2.27-19-6l8-53c3.1-4.76,9.63-6.66,13-12-1.85-20.37-10.85-53.64-21-69-17.21,1.47-22.46-2.77-34-11-.14-9.23-1.67-20.48-5-27l-41-21c-6.34-9-7.27-23.25-13-32l-41-4L166,282l-14-69c-21.82-6.36-26.61-14.59-40-28-36.26.15-48,18.18-66,36-15.54-.81-12.46-12.39-14-24L9,188c-5.23-3.8-8.49-14.78-9-23,3.82-6.25,8.72-8.78,12-16-4.74-11.21-14-25.5-7-36l16-6L18,73l5-6H53c8.59-6.55,11.28-35.29,29-28,7.45,5.68,9.33,20.58,15,28l13-3c2.24-9.2,3.9-22.39,9-29,13.82,1.91,20.28,18.84,34,13,1.34-6.4.2-10.14-2-15,3.57-7.64,9.25-10.74,15-16C195.84,18.19,214.65,14.62,233,0Z"/><path class="cls-2" d="M126,356c8.17,4.79,16.47,22.23,20,31,4.26,10.59-10.79,112.49-15,120l-3,1c-5.24-2.11-16.17-5.69-20,0l-8,21-22-2c-15.74-29.75.75-65.36-4-104L62,397c2.39-6.63,5.36-17.44,11-21,2-2.08,1-1.36,5-2l12,7Z"/><path class="cls-3" d="M255,610l32,2,20,15c26.3,9.87,58.75-11.48,75-14l3,3,2,2v5l-10,35,2,54c-.86,4.41-2.4,4-6,6l-1,1-26-7-12-20-50-16-40-40C244.47,625.15,250.18,616.88,255,610Z"/></g></g></svg>
        
       		
-      		<div class="roma">
-      			<label>
-      			
-      			  ROMA FM 89.5
-      			</label>
-      		</div>
-      
-			<div class="fir">
-				<label>
-				
-				  FIRENZE FM 107.9
-				</label>
-			</div>
-	  
-	  
-			<div class="mil">
-				<label>
-				
-				  MILANO FM 89.8/92.4
-				</label>
-			</div>
-			<div class="lecco">
-				<label>
-				
-				  LECCO FM 89.7
-				</label>
-			</div>
-			<div class="como">
-				<label>
-				
-				  COMO FM 89.7
-				</label>
-			</div>
-			<div class="latina">
-				<label>
-				
-				  LATINA FM 89.5
-				</label>
-			</div>
-			<div class="prato">
-				<label>
-				
-				  PRATO FM 107.9
-				</label>
-			</div>
+      		<div class="roma"><label>ROMA FM 89.5</label></div>
+			<div class="fir"><label>FIRENZE FM 107.9</label></div>
+			<div class="mil"><label>MILANO FM 89.8/92.4</label></div>
+			<div class="torino"><label>TORINO FM 98.7</label></div>
+			<div class="genova"><label>GENOVA FM 101.1</label></div>
+			
       </div>
 
       </div>
@@ -896,6 +894,7 @@
 				</svg>
 			</div>
 		</button>
+		
 	<button class="btn play-pause">
 		<div class="icon-container">
 			<svg class="icon play">
@@ -908,6 +907,13 @@
 				<use xlink:href="#pause"></use>
 			</svg>
 		</div>
+		<div class="circle">
+		<div class="circle__back-1"></div>
+		<div class="circle__back-2"></div>
+		</div>
+		
+		
+		
 	</button>
 
 	
@@ -919,9 +925,11 @@
 				</div>
 				
 			</button>
-	
-
-	
+			
+			
+			
+			
+			
 </div>
 
 
@@ -977,11 +985,21 @@
 
 <script>
 	const labels = Array.from(document.getElementsByTagName("label"));
-	
+	const wave1 = document.querySelector('.circle__back-1');
+	const wave2 = document.querySelector('.circle__back-2');
+	wave1.classList.add('paused');
+	wave2.classList.add('paused');	
 	labels.forEach(btn => {
 		btn.addEventListener("click", () => {
-			const labels = Array.from(document.getElementsByTagName("label"));
-			console.log(labels)
+			if(btn.textContent.split(" ")[1]=="HINTERLAND"){
+				console.log("channel_"+btn.textContent.split(" ")[1])
+				
+			}else{
+				//fm_player.pause()
+				//fm_player.src="channel_"+btn.textContent.split(" ")[0]
+				//fm_player.play()
+			console.log("channel_"+btn.textContent.split(" ")[0])
+			}
 			labels.forEach(btn => {
 				
 			btn.classList.remove("label-active");
@@ -1028,12 +1046,16 @@
 		
 	fm_player.addEventListener("play",() =>{	
 	buttons.forEach(btn => {
-		btn.classList.add("active")		
+		btn.classList.add("active")
+		wave1.classList.remove('paused');
+		wave2.classList.remove('paused');				
 		});	
 	})		
 	fm_player.addEventListener("pause",() =>{
 		buttons.forEach(btn => {
-			btn.classList.remove("active")		
+			btn.classList.remove("active")
+			wave1.classList.add('paused');
+			wave2.classList.add('paused');				
 		});	
 	})			
 		
