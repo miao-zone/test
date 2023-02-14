@@ -286,6 +286,14 @@
 	  left: 10px;
 	  z-index: 1;
 	}
+	.slick-dots {
+		bottom: 100px;
+		opacity: 0.5;
+		
+	}
+	.slick-dots li button:before{
+		font-size: 15px;
+	}
 	
 	.slick-next {
 	  right: 10px;
@@ -1050,8 +1058,8 @@
   var slideContainer = $('.slide-container');
    
   slideContainer.slick({
-	  
-	
+	  dots: true,
+		arrows: false,
 	  
 	  
   });
