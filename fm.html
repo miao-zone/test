@@ -1021,18 +1021,18 @@
 			console.log(btn.nextSibling)
 			
 			
-			dots.forEach(btn => {
-				
-			btn.classList.remove("active");
-			})
-			btn.nextSibling.classList.add("active")
+			
 			}
 			labels.forEach(btn => {
 				
 			btn.classList.remove("label-active");
 			})
 			btn.classList.toggle("label-active");
-			
+			dots.forEach(btn => {
+				
+			btn.classList.remove("active");
+			})
+			btn.nextSibling.classList.add("active")
 		});
 	});
 	
