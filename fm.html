@@ -974,10 +974,10 @@
 	@keyframes waves {
 	  0% {
 	    transform: scale(1);
-	    opacity: 0.4;
+	    opacity: 0.6;
 	  }
 	  50% {
-	    opacity: 0.4;
+	    opacity: 0.6;
 	  }
 	  100% {
 	    transform: scale(2);
@@ -995,7 +995,7 @@
 	  
 	}
 	.circle__back-1 {
-	  box-shadow: 3px 3px 5px var(--greyLight-2), -0.2rem -0.2rem 0.4rem var(--white);
+	  box-shadow: 0px 0px 5px var(--greyLight-2), 0rem 0rem 0.4rem var(--white);
 	  background: linear-gradient(to bottom right, var(--greyLight-2) 0%, var(--white) 100%);
 	  animation: waves 4s linear infinite;
 	}
@@ -1003,7 +1003,7 @@
 	  animation-play-state: paused;
 	}
 	.circle__back-2 {
-	  box-shadow: 0.3rem 0.3rem 0.5rem var(--greyLight-2), -0.2rem -0.2rem 0.4rem var(--white);
+	  box-shadow: 0rem 0rem 0.5rem var(--greyLight-2), 0rem 0rem 0.4rem var(--white);
 	  animation: waves 4s linear 2s infinite;
 	}
 	.circle__back-2.paused {
@@ -1013,7 +1013,7 @@
 	.circle {
 	  grid-column: 2/3;
 	  grid-row: 4/6;
-	  width: 9rem;
+	  width: 80px;
 	  height: 100%;
 	  justify-self: center;
 	  border-radius: 1rem;
@@ -1022,11 +1022,15 @@
 	  position: absolute;
 	  left: 0px;
 	  top: 0px;
-	  z-index: -1;
+	  bottom: 0px;
+	  right: 0px;
+	  margin: auto;
+	  z-index: -111;
+	  
 	  }
 	  
 	.circle-shadow {
-	  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--primary);
+	  box-shadow: inset 0rem 0rem 0.5rem var(--greyLight-2), inset -0rem -0 0.5rem var(--primary);
 	}
 	
 	
@@ -1168,10 +1172,7 @@
 				<use xlink:href="#pause"></use>
 			</svg>
 		</div>
-		<div class="circle">
-		<div class="circle__back-1"></div>
-		<div class="circle__back-2"></div>
-		</div>
+		
 		
 		
 		
@@ -1188,7 +1189,10 @@
 			</button>
 			
 			
-			
+		<div class="circle">
+		<div class="circle__back-1"></div>
+		<div class="circle__back-2"></div>
+		</div>	
 			
 			
 </div>
@@ -1290,7 +1294,7 @@
 	});
 	btn1.addEventListener("click", () => {
 									
-			console.log(fm_player.paused)
+		
 			if(fm_player.volume>=1){
 			btn1.style.opacity= 0.3;				
 			}
