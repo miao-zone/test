@@ -1258,14 +1258,14 @@
 	labels.forEach(btn => {
 		btn.addEventListener("click", () => {
 			if(btn.textContent.split(" ")[1]=="HINTERLAND"){
-				console.log("channel_"+btn.textContent.split(" ")[1])
+				//console.log("channel_"+btn.textContent.split(" ")[1])
 				
 			}else{
 				//fm_player.pause()
 				//fm_player.src="channel_"+btn.textContent.split(" ")[0]
 				//fm_player.play()
-			console.log("channel_"+btn.textContent.split(" ")[0])
-			console.log(btn.nextSibling)
+			//console.log("channel_"+btn.textContent.split(" ")[0])
+			//console.log(btn.nextSibling)
 			
 			
 			
@@ -1369,6 +1369,10 @@
   
 })();
 
-
+$(Document).keyup(function(e){
+	if(e.keyCode==32){
+	if(fm_player.paused){fm_player.play();}else{fm_player.pause();}}
+	 
+})
 </script>
 
