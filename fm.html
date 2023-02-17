@@ -40,6 +40,7 @@
 	  background: #3E1E68;
 	position: relative;
 	z-index: -111;
+	
 	}
 	
 	.background span {
@@ -54,6 +55,10 @@
 	  animation-iteration-count: infinite;
 	 
 	}
+	.background span.paused {
+		animation-play-state: paused;
+	}
+	
 	.background span:nth-child(1) {
 	  color: #583C87;
 	  top: 47%;
@@ -1274,7 +1279,7 @@
 		});
 	});
 	
-	
+	const spans=Array.from(document.getElementsByClassName("background")[0].getElementsByTagName("span"))
 	const buttons = Array.from(document.getElementsByClassName("play-pause"));
 	
 	buttons.forEach(btn => {
@@ -1285,7 +1290,7 @@
 	});
 	btn1.addEventListener("click", () => {
 									
-			
+			console.log(fm_player.paused)
 			if(fm_player.volume>=1){
 			btn1.style.opacity= 0.3;				
 			}
@@ -1315,6 +1320,7 @@
 		wave1.classList.remove('paused');
 		wave2.classList.remove('paused');				
 		});	
+		spans.forEach(btn =>{btn.classList.remove('paused')});
 	})		
 	fm_player.addEventListener("pause",() =>{
 		buttons.forEach(btn => {
@@ -1322,10 +1328,11 @@
 			wave1.classList.add('paused');
 			wave2.classList.add('paused');				
 		});	
+		spans.forEach(btn =>{btn.classList.add('paused')});
+		
 	})			
 	
 	
-				
 		
 	window.onload=function () {
 	
