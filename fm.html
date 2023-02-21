@@ -603,10 +603,29 @@
 	}
 	b.active {
 		background-color: #82BB30;
-		box-shadow: 0px 0px 10px 1px #82BB30;
-		transition: 0.6s;
-		
+		box-shadow:  0rem 0rem 8px 1px #82BB30;
+		transition: 0.5s;
+		animation-name: shing;
+		animation-delay: 0.5s;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
 	}
+	
+	@keyframes shing {
+		
+		0% {
+			box-shadow:  0rem 0rem 10px 1px #82BB30;
+		}
+		
+		50% {
+			box-shadow:  0rem 0rem 10px 2px #82BB30;
+		}
+		
+		100% {
+			box-shadow:  0rem 0rem 10px 1px #82BB30;
+		}
+	}
+	
 	
 	.city_label--mad{
 		font-size: 8pt;
