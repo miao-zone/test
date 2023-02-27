@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	
 	
-    <title>华夏之声中文电台</title>
+    <title>▶华夏之声中文电台</title>
 	<style>
 	@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
 	*, *:before, *:after {
@@ -26,6 +26,7 @@
 	  --greyLight-2: #c297bf;
 	  --greyLight-3: #d5e1ff;
 	  --greyDark: #9baacf;
+	  --dot-top:25px;
 	}
 	
 	body {
@@ -590,7 +591,7 @@
 	.big_mad--dot {
 		position: absolute;
 		left: 60px;
-		top: 25px;		
+		top: var(--dot-top);		
 	}
 	
 	
@@ -641,7 +642,7 @@
 	.big_mil--dot {
 		position: absolute;
 		left: 95px;
-		top: 25px;		
+		top: var(--dot-top);	
 	}
 	.big_roma {
 		position: absolute;
@@ -653,7 +654,7 @@
 	.big_roma--dot {
 		position: absolute;
 		left: 60px;
-		top: 25px;		
+		top: var(--dot-top);		
 	}
 	.big_fir {
 		position: absolute;
@@ -666,7 +667,7 @@
 	.big_fir--dot {
 		position: absolute;
 		left: 90px;
-		top: 25px;		
+		top: var(--dot-top);	
 	}
 	.big_tor {
 		position: absolute;
@@ -679,7 +680,7 @@
 	.big_tor--dot {
 		position: absolute;
 		left: 60px;
-		top: 25px;		
+		top: var(--dot-top);		
 	}
 	.big_gen {
 		position: absolute;
@@ -692,7 +693,7 @@
 	.big_gen--dot {
 		position: absolute;
 		left: 50px;
-		top: 25px;		
+		top: var(--dot-top);		
 	}
 	.svg_m{
 		width: 30px;
@@ -1101,7 +1102,7 @@
 	
 	<div class="big_box">
 		<div class="big_box--map">
-		<div class="big_mad"><label>MADRID FM 92.9</label><b class="big_mad--dot"></b></div>	
+		<div class="big_mad" id="md"><label>MADRID FM 92.9</label><b class="big_mad--dot"></b></div>	
 		<div class="big_roma"><label>ROMA FM 89.5</label><b class="big_roma--dot"></b></div>
 		<div class="big_fir"><label>FIRENZE FM 107.9</label><b class="big_fir--dot"></b></div>
 		<div class="big_mil"><label>MILANO FM 89.8/92.4</label><b class="big_mil--dot"></b></div>
@@ -1351,10 +1352,11 @@
 		
 	fm_player.addEventListener("play",() =>{	
 	buttons.forEach(btn => {
-		btn.classList.add("active")
+		btn.classList.add("active");
 		wave1.classList.remove('paused');
 		wave2.classList.remove('paused');				
 		});	
+		document.title="▶华夏之声中文电台"
 		spans.forEach(btn =>{btn.classList.remove('paused')});
 	})		
 	fm_player.addEventListener("pause",() =>{
@@ -1364,12 +1366,14 @@
 			wave2.classList.add('paused');				
 		});	
 		spans.forEach(btn =>{btn.classList.add('paused')});
-		
+		document.title="⏸华夏之声中文电台"
 	})			
 	
 	
 		
 	window.onload=function () {
+		
+		
 	
 	}	
 		
