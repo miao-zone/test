@@ -5,9 +5,7 @@
     <meta property="og:type" content="music.album"/>
 	<meta property="og:image" content="img/logo.jpg">	
 	<meta property="og:title" content="华夏之声中文电台"/>
-	<meta property="og:music:artist" content="歌手"/>
-	<meta property="og:music:album:song" content=" title=歌曲名; url=https://ns3.mycloud-apps.es:9012/live"/>	
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -1236,7 +1234,7 @@
 	
 	
 </div>
-<audio id="fm_player" autoplay  name="media"><source src="https://cdn4.onstream.audio:9156/china"></audio>
+<audio id="fm_player" autoplay  name="media"></audio>
 
 
 
@@ -1249,12 +1247,13 @@
 
 </html>
 <script>
+	var channel_DEF="https://cdn4.onstream.audio:9156/china";
 	var channel_MAD="https://ns3.mycloud-apps.es:9012/live";
 	var dots_active=Array.from(document.getElementsByClassName("big_box--map")[0].children);
 		dots_active.pop()
 		
 	
-	
+	fm_player.src=channel_DEF;
 </Script>	
 
 
@@ -1276,7 +1275,7 @@
 				//fm_player.pause()
 				//fm_player.src="channel_"+btn.textContent.split(" ")[0]
 				//fm_player.play()
-			//console.log("channel_"+btn.textContent.split(" ")[0])
+			//console.log("channel_"+btn.textContent.split(" ")[0]);
 			//console.log(btn.nextSibling)
 			
 			
@@ -1291,8 +1290,8 @@
 				
 			btn.classList.remove("active");
 			})
-			console.log(btn)
-			console.log(btn.nextSibling)
+			//console.log(btn)
+			//console.log(btn.nextSibling)
 			if(btn.nextSibling){btn.nextSibling.classList.add("active")}
 			
 			
