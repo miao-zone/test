@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <audio id="fm_player" autoplay  name="media"><source src="https://ns3.mycloud-apps.es:9012/live"></audio> -->
+		
+		<audio id="fm_player" autoplay controls  name="media"><source src="http://43.138.23.248:8000/chinafm"></audio>
+	</body>
+	<script>
+		var urls=[];
+		urls[0]="http://140.21.222.195:8000"
+		urls[1]="http://43.138.23.248:8000"
+		urls[2]="http://139.9.194.164:8000"
+		function ajax(a,b,c){
+			c=new XMLHttpRequest;
+			c.open('GET',a);
+			c.onload=b;
+			c.send()
+			console.log(c)
+		}
+		var start;
+		function measure(){
+			for(url in urls){
+			start=window.performance.now();
+			ajax(urls[url],function(){
+				var Delay=window.performance.now()-start;
+				if (Delay>2000){Delay="超时"}
+				console.log(urls[url]+"延迟"+Delay);
+			})
+			} 
+		}
+		measure()
+		console.log()
+		
+		// 主链接：http://140.21.222.195:8000/chinafm
+		// 备链接：http://43.138.23.248:8000/chinafm
+		// 备链接：http://139.9.194.164:8000/chinafm
+		
+	</script>
+</html>
+
+
+
